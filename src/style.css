@@ -1,11 +1,16 @@
+/* 
+    #24616e  ,  #ffdaac  .  #ffc978
+    #228028  ,  #07340A  ,  #77B62E  ,  #46770B
+*/
+
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    background-color: #934;
 }
 
 body{
+    background-color: #693516ee;
 }
 
 #count{
@@ -14,13 +19,45 @@ body{
     width: 150px;
     height: 100px;
     border-radius: 50%;
-    box-shadow: 0px 2px 10px 5px rgb(39, 39, 39);
+    box-shadow: 0px 2px 7px 3px rgb(39, 39, 39);
     color: rgb(250, 255, 183);
+    outline: 1px solid rgb(155, 0, 72);
+    outline-offset: -3px;
     font-size: 1.5em;
     font-weight: bold;
     letter-spacing: 5px;
-
-    align-items: center;
     justify-content: center;
-    margin: 50% auto;
+    align-items: center;
+    margin: auto;
+    margin-top: 40vh;
+}
+
+.btn{
+    text-align: center;
+    margin-top: 30px;
+}
+
+.btn span{
+    text-align: center;
+    padding: 8px;
+    margin: 10px;
+    background-color: #df7083;
+    border-radius: 30%;
+    cursor: pointer;
+    color: #49000f;
+    font-weight: bold;
+    transition: letter-spacing 300ms, border-radius 800ms;
+}
+
+.btn .btnStart{
+    background-color: #abdf70;
+}
+
+.btn .btnStop{
+    background-color: #df7070;
+}
+
+.btn span:hover{
+    letter-spacing: 4px;
+    border-radius: 50%;
 }
