@@ -1,47 +1,57 @@
-import React from 'react';
-import Button from './Button';
-// import CountDown from './CountDoen';
+import React, { useState } from 'react';
+// import ReactDOM from 'react-dom';
+
+import Title from './Title'
+import Timer from './Timer';
+// import Controler from './Controler';
 import './style.css'
 
-var interval;
+// class Main extends React.Component {
+//     constructor(){
+//         super();
+//         this.state = {
+//             title: `Click the start button to start the timer.`
+//             // The timer is counting ...
+//             // The timer has stopped!
+//             // The timer is reset.
+//         }
+//     }
 
-class Main extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-            countDown: 0
-        }
+//     render() {
+//         return (
+//             <div className='main'>
+//                 <h1>Hello friends</h1>
+//                 <h2>This is a great timer!</h2>
+//                 <Title title = {this.state.title}/>
+//                 <Timer title = {this.state.title}/>
+//             </div>
+//         )
+//     }
+// }
+
+const Main = () => {
+    const [title, setTitle] = useState("Click the start button to start the timer");
+
+    const btnStartTitle = () => {
+        setTitle("he timer is counting ...");
     }
 
-    startInterval = () => {
-        interval = setInterval(() => {
-            this.setState({
-                countDown: this.state.countDown + 1
-            })
-        }, 1000);
+    const btnStopTitle = () => {
+        setTitle("The timer has stopped!");
     }
 
-    stopInterval = () => {
-        clearInterval(interval);
+    const btnResetTitle = () => {
+        setTitle("The timer is reset.");
     }
 
-    // componentDidUpdate() {
-    //     if (this.state.countDown == 0) {
-    //         clearInterval(interval);
-    //         document.getElementById('count').style.background='red';
-    //     }
-
-    // }
-
-    render() {
-        return (
-            // <CountDown countDown= {this.state.countDown} />
-            <div>
-                <p id='count'>{this.state.countDown}</p>
-                <Button startInterval={this.startInterval} stopInterval={this.stopInterval} />
-            </div>
-        )
-    }
+    return (
+        <div className='main'>
+            <h1>Hello friends</h1>
+            <h2>This is a great timer!</h2>
+            <Title title={title} />
+            <Timer title={title} titleSet={btnStartTitle} btnStopTitle={btnStopTitle} btnResetTitle={btnResetTitle} />
+        </div>
+    )
 }
 
 export default Main;
