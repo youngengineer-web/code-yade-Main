@@ -5,7 +5,6 @@ import Title from './Title'
 import Timer from './Timer';
 // import Controler from './Controler';
 import './style.css'
-import TimeList from './TimeList';
 
 // class Main extends React.Component {
 //     constructor(){
@@ -56,10 +55,7 @@ const Main = () => {
             <h1>Hello friends</h1>
             <h2>This is a great timer!</h2>
             <Title title={title} />
-            <Timer title={title} titleSet={btnStartTitle} btnStopTitle={btnStopTitle} btnResetTitle={btnResetTitle} handleSetIsLight={handleSetIsLight} isLight={isLight} />
-            <TimeList>
-                {timeArray}
-            </TimeList>
+            <Timer title={title} titleSet={btnStartTitle} btnStopTitle={btnStopTitle} btnResetTitle={btnResetTitle} handleSetIsLight={handleSetIsLight} isLight={isLight} timeArray={timeArray} setTimeArray={setTimeArray} />
         </div>
     )
 }

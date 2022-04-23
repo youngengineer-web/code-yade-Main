@@ -1,4 +1,5 @@
 import React from 'react';
+import TimeList from './TimeList';
 // import ReactDOM from 'react-dom';
 
 var interval;
@@ -43,6 +44,15 @@ class Timer extends React.Component {
         }
     }
 
+    handleSaveTime=()=>{
+        let h = this.state.hour;
+        let m = this.state.minute;
+        let s = this.state.second;
+        let newTime = `${h > 9 ? h : "0" + h} : ${m > 9 ? m : "0" + m} : ${s > 9 ? s : "0" + s}`
+
+        this.props.setTimeArray([... this.props.timeArray, newTime]);
+    }
+
     stopInterval = () => {
         clearInterval(interval);
         this.setState({
@@ -66,7 +76,8 @@ class Timer extends React.Component {
 
         return (
             <div className='mainTimer'>
-                <h1 className='timer'> {`${h > 9 ? h : "0" + h} : ${m > 9 ? m : "0" + m} : ${s > 9 ? s : "0" + s}`} </h1>
+                <h1 className='timer' onClick={this.handleSaveTime}>
+                    {`${h > 9 ? h : "0" + h} : ${m > 9 ? m : "0" + m} : ${s > 9 ? s : "0" + s}`} </h1>
                 <div className='btn'>
                     <span className='btnStart' onClick={this.startInterval}>Start</span>
                     <span className='btnStop' onClick={this.stopInterval}>Stop</span>
@@ -75,6 +86,9 @@ class Timer extends React.Component {
                         {this.props.isLight? "Light" : "Dark"}
                     </span>
                 </div>
+                <TimeList>
+                    {this.props.timeArray}
+                </TimeList>
             </div>
         )
     }
