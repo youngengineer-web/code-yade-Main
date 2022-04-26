@@ -1,4 +1,5 @@
 import React from 'react';
+import { ColorContext, TestContext } from './testContext';
 import TimeList from './TimeList';
 // import ReactDOM from 'react-dom';
 
@@ -14,6 +15,9 @@ class Timer extends React.Component {
             isStart: false
         }
     }
+
+    static contextType = TestContext;
+    // static contextType = ColorContext;
 
     componentDidMount() {
         this.startInterval();
@@ -44,7 +48,7 @@ class Timer extends React.Component {
         }
     }
 
-    handleSaveTime=()=>{
+    handleSaveTime = () => {
         let h = this.state.hour;
         let m = this.state.minute;
         let s = this.state.second;
@@ -82,10 +86,13 @@ class Timer extends React.Component {
                     <span className='btnStart' onClick={this.startInterval}>Start</span>
                     <span className='btnStop' onClick={this.stopInterval}>Stop</span>
                     <span className='btnReset' onClick={this.resetInterval}>Reset</span>
-                    <span className='btnSetTitle' onClick={this.props.handleSetIsLight} style={{background:this.props.isLight?"#adadad":"#4e4e4e"}} >
-                        {this.props.isLight? "Light" : "Dark"}
+                    <span className='btnSetTitle' onClick={this.props.handleSetIsLight} style={{ background: this.props.isLight ? "#adadad" : "#4e4e4e" }} >
+                        {this.props.isLight ? "Light" : "Dark"}
                     </span>
                 </div>
+                <h4
+                // style={{color:this.context }}
+                >{this.context}</h4>
                 <TimeList>
                     {this.props.timeArray}
                 </TimeList>

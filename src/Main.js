@@ -5,6 +5,7 @@ import Title from './Title'
 import Timer from './Timer';
 // import Controler from './Controler';
 import './style.css'
+import { TestContext } from './testContext';
 
 // class Main extends React.Component {
 //     constructor(){
@@ -51,12 +52,14 @@ const Main = () => {
     }
 
     return (
-        <div className='main' style={{background:isLight?"black":"#24616e"}}>
-            <h1>Hello friends</h1>
-            <h2>This is a great timer!</h2>
-            <Title title={title} />
-            <Timer title={title} titleSet={btnStartTitle} btnStopTitle={btnStopTitle} btnResetTitle={btnResetTitle} handleSetIsLight={handleSetIsLight} isLight={isLight} timeArray={timeArray} setTimeArray={setTimeArray} />
-        </div>
+        <TestContext.Provider value='Time Record:'>
+            <div className='main' style={{ background: isLight ? "black" : "#24616e" }}>
+                <h1>Hello friends</h1>
+                <h2>This is a great timer!</h2>
+                <Title title={title} />
+                <Timer title={title} titleSet={btnStartTitle} btnStopTitle={btnStopTitle} btnResetTitle={btnResetTitle} handleSetIsLight={handleSetIsLight} isLight={isLight} timeArray={timeArray} setTimeArray={setTimeArray} />
+            </div>
+        </TestContext.Provider>
     )
 }
 
