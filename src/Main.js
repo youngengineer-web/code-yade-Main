@@ -32,7 +32,7 @@ import './style.css'
 const Main = () => {
     const [title, setTitle] = useState("Click the start button to start the timer");
     const [isLight, setIsLight] = useState(false);
-    const [timeArray, setTimeArray] = useState("00 : 02 : 57", "00 : 03 : 24");
+    const [timeArray, setTimeArray] = useState([]);
 
     const btnStartTitle = () => {
         setTitle("he timer is counting ...");

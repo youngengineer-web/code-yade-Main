@@ -50,7 +50,7 @@ class Timer extends React.Component {
         let s = this.state.second;
         let newTime = `${h > 9 ? h : "0" + h} : ${m > 9 ? m : "0" + m} : ${s > 9 ? s : "0" + s}`
 
-        this.props.setTimeArray([... this.props.timeArray, newTime]);
+        this.props.setTimeArray([...this.props.timeArray, newTime]);
     }
 
     stopInterval = () => {

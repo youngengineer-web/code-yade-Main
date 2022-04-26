@@ -4,7 +4,7 @@ const TimeList = (props) => {
     return (
         <div className="timeSave">
             {props.children.map((c) => (
-                <Item key={Math.random()}>{c}</Item>
+                <Item key={Math.random()}> {c} </Item>
             ))}
             {/* <Item>{props.children}</Item> */}
         </div>
