@@ -1,5 +1,5 @@
 import React from 'react';
-import { ColorContext, TestContext } from './testContext';
+import { TimeRicord } from './testContext';
 import TimeList from './TimeList';
 // import ReactDOM from 'react-dom';
 
@@ -16,8 +16,7 @@ class Timer extends React.Component {
         }
     }
 
-    static contextType = TestContext;
-    // static contextType = ColorContext;
+    static contextType = TimeRicord;
 
     componentDidMount() {
         this.startInterval();
@@ -91,8 +90,8 @@ class Timer extends React.Component {
                     </span>
                 </div>
                 <h4
-                // style={{color:this.context }}
-                >{this.context}</h4>
+                style={{color:this.context.timeColor }}
+                >{this.context.timeTitr}</h4>
                 <TimeList>
                     {this.props.timeArray}
                 </TimeList>
