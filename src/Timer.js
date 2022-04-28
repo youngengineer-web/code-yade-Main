@@ -1,6 +1,5 @@
 import React from 'react';
 import { TimeRicord } from './testContext';
-import TimeList from './TimeList';
 // import ReactDOM from 'react-dom';
 
 var interval;
@@ -48,12 +47,13 @@ class Timer extends React.Component {
     }
 
     handleSaveTime = () => {
-        let h = this.state.hour;
-        let m = this.state.minute;
-        let s = this.state.second;
-        let newTime = `${h > 9 ? h : "0" + h} : ${m > 9 ? m : "0" + m} : ${s > 9 ? s : "0" + s}`
+        // let h = this.state.hour;
+        // let m = this.state.minute;
+        // let s = this.state.second;
+        // let newTime = `${h > 9 ? h : "0" + h} : ${m > 9 ? m : "0" + m} : ${s > 9 ? s : "0" + s}`
+        let newTime = document.querySelector('.timer').innerHTML;
 
-        this.props.setTimeArray([...this.props.timeArray, newTime]);
+        this.context.setTimeArray([...this.context.timeArray, newTime]);
     }
 
     stopInterval = () => {
@@ -89,12 +89,9 @@ class Timer extends React.Component {
                         {this.props.isLight ? "Light" : "Dark"}
                     </span>
                 </div>
-                <h4
-                style={{color:this.context.timeColor }}
-                >{this.context.timeTitr}</h4>
-                <TimeList>
-                    {this.props.timeArray}
-                </TimeList>
+                <h3 style={{ color: this.context.timeColor }}>
+                    {this.context.timeTitr}
+                </h3>
             </div>
         )
     }

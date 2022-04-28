@@ -108,3 +108,14 @@
 .btnSetTitle:hover{
     background: #101010;
 }
+
+.timeRecord{
+    font-size: large;
+    font-family: fantasy;
+    cursor: pointer;
+
+}
+
+.timeRecord:hover{
+    text-shadow: 2px 2px 6px #000, -1px -1px 6px #000;
+}
