@@ -7,7 +7,7 @@ const TimeList = (props) => {
     return (
         <div className="timeSave">
             {context.timeArray.map((c) => (
-                <Item key={Math.random()}> {c} </Item>
+                <Item key={Math.random()}>{c}</Item>
             ))}
             {/* <Item>{props.children}</Item> */}
         </div>

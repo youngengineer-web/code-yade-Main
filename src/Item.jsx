@@ -5,8 +5,9 @@ const Item = (props) => {
     const context = useContext(TimeRicord);
 
     const handleDeletItem = (e) => {
-        // confirm("Do You?")
-        alert(e.target.innerHTML);
+        // confirm("Do You?");
+        // console.log(context.timeArray);
+        // console.log(e.target.innerHTML);
         context.setTimeArray(context.timeArray.filter(t => t != e.target.innerHTML));
     }
 

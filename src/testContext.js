@@ -1,3 +1,5 @@
 import { createContext } from "react";
 
-export const TimeRicord = createContext({});
+export const TimeRicord = createContext({
+    
+});
